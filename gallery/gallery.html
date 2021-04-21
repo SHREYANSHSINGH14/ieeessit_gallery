@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- <script src="gallery.js"></script> -->
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="gallery1.css"> -->
+</head>    
+<body>
+    <div class="gallery">
+        <span class="btn">
+            <button id="prev" onclick="prev()"></button>
+            <button id="next" onclick="next()"></button>
+        </span>
+        <div class="slider">
+            <div class="slides">
+                <div class="first" id="first">
+                    <img src="gallery/photos/1.jpg" alt="" class="img" id="image1">
+                </div>
+                <div class="image">
+                    <img src="gallery/photos/2.jpg" alt="" class="img" id="image2">
+                </div>
+                <div class="image">
+                    <img src="gallery/photos/3.jpg" alt="" class="img" id="image3">
+                </div>
+                <div class="image">
+                    <img src="gallery/photos/4.jpg" alt="" class="img" id="image4">
+                </div>
+                <div class="image">
+                    <img src="gallery/photos/5.jpg" alt="" class="img" id="image5">
+                </div>
+                <!-- <img src="" class="images"     alt="" id="image6">
+                <img src="" class="images"     alt="" id="image7">
+                <img src="" class="images"     alt="" id="image8">
+                <img src="" class="images"     alt="" id="image9">
+                <img src="" class="images"    alt="" id="image10"> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        var img=1 ;
+
+        function next(){
+            img+=1;
+            if(img>=6){
+                img = 1;
+                console.log(img);
+            }
+            else{
+                console.log(img);
+            }
+            slide(img);
+        }
+
+        function prev(){
+            img-=1;
+            if(img<=0){
+                img = 5;
+                console.log(img);
+        }
+            else{
+                console.log(img);
+            }
+            slide(img);
+        }
+        setInterval(function(){
+            img++;
+            if(img>=6){
+                img = 1;
+                console.log(img);
+            }
+            else{
+                console.log(img);
+            }
+            slide(img);
+        },5000);
+        var n;
+        function slide(n){
+            switch (n) {
+            case 1:
+                document.getElementById('first').style.marginLeft="0";
+                break;
+            case 2:
+                document.getElementById('first').style.marginLeft="-20%";
+                break;
+            case 3:
+                document.getElementById('first').style.marginLeft="-40%";
+                break;
+            case 4:
+                document.getElementById('first').style.marginLeft="-60%";
+                break;
+            case 5:
+                document.getElementById('first').style.marginLeft="-80%";
+                break;
+        }
+    }
+        
+    </script>
+</body>
+</html>
